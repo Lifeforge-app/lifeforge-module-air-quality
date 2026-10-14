@@ -54,6 +54,10 @@ export const set = forge
         .where(eq(airQualitySelectedStation.id, existing.id))
         .returning()
 
+      if (!updated) {
+        return response.notFound()
+      }
+
       return response.ok(updated)
     }
 
@@ -61,6 +65,10 @@ export const set = forge
       .insert(airQualitySelectedStation)
       .values(values)
       .returning()
+
+    if (!created) {
+      return response.badRequest('Failed to save selected station')
+    }
 
     return response.ok(created)
   })

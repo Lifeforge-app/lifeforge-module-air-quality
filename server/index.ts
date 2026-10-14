@@ -433,9 +433,9 @@ async function resolveStationDetail(
         const subSeries = series.filter(item => subIndexKeys.includes(item.key))
 
         if (subSeries.length > 0) {
-          const aqiValues = subSeries[0].values.map((_, index) =>
+          const aqiValues = subSeries[0]?.values.map((_, index) =>
             Math.max(...subSeries.map(item => item.values[index] ?? 0))
-          )
+          ) ?? []
 
           series = [{ key: 'aqi', values: aqiValues }, ...series]
         }

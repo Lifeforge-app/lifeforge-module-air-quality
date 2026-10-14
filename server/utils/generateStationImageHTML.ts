@@ -96,7 +96,7 @@ function getLevel(aqi: number | null): AqiLevel {
     return UNKNOWN_LEVEL
   }
 
-  return AQI_LEVELS.find(level => aqi <= level.max) ?? AQI_LEVELS[0]
+  return AQI_LEVELS.find(level => aqi <= level.max) ?? UNKNOWN_LEVEL
 }
 
 function toGray(hex: string): string {
@@ -115,7 +115,7 @@ function toGray(hex: string): string {
 
 function colorFor(key: string, value: number): string {
   if (key in WEATHER_COLORS) {
-    return WEATHER_COLORS[key]
+    return WEATHER_COLORS[key] ?? ''
   }
 
   return getLevel(value).color
