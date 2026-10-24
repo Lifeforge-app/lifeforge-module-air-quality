@@ -3,7 +3,7 @@
   "displayName": "Air Quality",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lifeforge-app/lifeforge-module-airQuality.git"
+    "url": "https://github.com/lifeforge-app/lifeforge-module-air-quality.git"
   },
   "version": "0.0.2",
   "type": "module",
