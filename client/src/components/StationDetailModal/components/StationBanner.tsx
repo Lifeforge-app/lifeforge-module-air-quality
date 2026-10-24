@@ -48,11 +48,11 @@ function StationBanner({
         style={bannerStyle}
       >
         <Text size="3xl" style={{ color: level.color }} weight="bold">
-          {aqi ?? '—'}
+          {aqi ?? '-'}
         </Text>
-        <Flex align="center" gap="xs">
+        <Flex align="center" gap="xs" minWidth="0">
           <Icon icon={icon} size="1.25rem" style={{ color: level.color }} />
-          <Text size="lg" style={{ color: level.color }} weight="bold">
+          <Text truncate size="lg" style={{ color: level.color }} weight="bold">
             {label}
           </Text>
         </Flex>
@@ -76,7 +76,7 @@ function StationBanner({
           style={{ color: level.color }}
           weight="bold"
         >
-          {aqi ?? '—'}
+          {aqi ?? '-'}
         </Text>
         <Flex align="center" gap="sm">
           <Icon

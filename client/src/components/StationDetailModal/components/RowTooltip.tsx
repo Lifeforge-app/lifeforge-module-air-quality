@@ -21,7 +21,7 @@ function RowTooltip({
         {label}
       </Text>
       <Text as="div" size="sm" weight="medium">
-        {rowLabel}: {payload[0].value ?? '—'}
+        {rowLabel}: {payload[0].value ?? '-'}
       </Text>
     </Stack>
   )

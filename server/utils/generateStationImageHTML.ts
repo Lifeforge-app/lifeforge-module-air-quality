@@ -195,7 +195,7 @@ export function generateStationImageHTML({
         <div class="row">
           <div class="row-top">
             <span class="row-label">${row.label}</span>
-            <span class="row-current">${currentMap.get(row.key) ?? '—'}</span>
+            <span class="row-current">${currentMap.get(row.key) ?? '-'}</span>
           </div>
           <div class="bars">${bars}</div>
           <div class="row-range">
@@ -339,7 +339,7 @@ export function generateStationImageHTML({
       </header>
       <div class="station">${escapeHtml(name)}</div>
       <div class="banner">
-        <div class="aqi">${resolvedAqi ?? '—'}</div>
+        <div class="aqi">${resolvedAqi ?? '-'}</div>
         <div class="level">
           <iconify-icon icon="${level.icon}" width="20" height="20"></iconify-icon>
           <span>${level.label}</span>

@@ -19,38 +19,30 @@ function StationTooltip() {
         const time = activeAnchor.getAttribute('data-station-time')
 
         return (
-          <Box
-            shadow
-            bg={{ base: 'bg-50', dark: 'bg-700' }}
-            maxWidth="24rem"
-            p="md"
-            r="md"
-          >
-            <Stack gap="xs">
-              <Text weight="semibold">{name}</Text>
-              <Flex align="center" gap="sm">
-                <Box
-                  flexShrink="0"
-                  height="0.75rem"
-                  r="full"
-                  style={{
-                    backgroundColor:
-                      activeAnchor.getAttribute('data-station-color') ??
-                      UNKNOWN_COLOR
-                  }}
-                  width="0.75rem"
-                />
-                <Text>
-                  {t('items.aqi')}: {aqi || '—'}
-                </Text>
-              </Flex>
-              {time && (
-                <Text color="muted" size="sm">
-                  {new Date(time).toLocaleString()}
-                </Text>
-              )}
-            </Stack>
-          </Box>
+          <Stack gap="xs">
+            <Text weight="semibold">{name}</Text>
+            <Flex align="center" gap="sm">
+              <Box
+                flexShrink="0"
+                height="0.75rem"
+                r="full"
+                style={{
+                  backgroundColor:
+                    activeAnchor.getAttribute('data-station-color') ??
+                    UNKNOWN_COLOR
+                }}
+                width="0.75rem"
+              />
+              <Text>
+                {t('items.aqi')}: {aqi || '-'}
+              </Text>
+            </Flex>
+            {time && (
+              <Text color="muted" size="sm">
+                {new Date(time).toLocaleString()}
+              </Text>
+            )}
+          </Stack>
         )
       }}
       zIndex="30"

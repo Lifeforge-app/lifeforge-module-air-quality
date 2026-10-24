@@ -62,7 +62,7 @@ function StationRow({
         </Box>
         <Box flexShrink="0" width={{ base: 'auto', sm: '4rem' }}>
           <Text size="2xl" weight="semibold">
-            {current ?? '—'}
+            {current ?? '-'}
           </Text>
         </Box>
       </Flex>

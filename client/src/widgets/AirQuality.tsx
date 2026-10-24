@@ -1,11 +1,14 @@
 import { useQuery } from '@tanstack/react-query'
+import { Link } from 'react-router'
 
 import type { WidgetConfig } from '@lifeforge/configs'
 import {
   Box,
+  Button,
   EmptyStateScreen,
   Flex,
   Icon,
+  Scrollbar,
   Stack,
   Text,
   Widget,
@@ -80,11 +83,25 @@ function StationDetail({ idx, name }: { idx: string; name: string }) {
 
 function AirQuality() {
   return (
-    <Widget icon="tabler:wind" title="Air Quality">
+    <Widget
+      actionComponent={
+        <Button
+          as={Link}
+          icon="tabler:chevron-right"
+          p="sm"
+          to="/air-quality"
+          variant="plain"
+        />
+      }
+      icon="tabler:wind"
+      title="Air Quality"
+    >
       <WithQueryData contract={forgeAPI.selection.get}>
         {({ station }) =>
           station ? (
-            <StationDetail idx={station.station_id} name={station.name} />
+            <Scrollbar>
+              <StationDetail idx={station.station_id} name={station.name} />
+            </Scrollbar>
           ) : (
             <EmptyStateScreen
               smaller

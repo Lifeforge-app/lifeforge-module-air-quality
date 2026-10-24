@@ -111,7 +111,7 @@ export function useAirQualityMap() {
     stationsQuery.data?.forEach(station => {
       const level = getAqiLevel(station.aqi)
 
-      const label = station.aqi === null ? '—' : String(station.aqi)
+      const label = station.aqi === null ? '-' : String(station.aqi)
 
       const marker = L.marker([station.lat, station.lng], {
         icon: L.divIcon({
