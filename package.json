@@ -5,7 +5,7 @@
     "type": "git",
     "url": "https://github.com/lifeforge-app/lifeforge-module-air-quality.git"
   },
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
   "author": "Melvin Chia <melvinchia623600@gmail.com>",
   "description": "Live air quality monitoring stations around the world.",
